@@ -1,4 +1,4 @@
 hadoops
 =======
 
-hadoop相关项目
+简单hdfs操作~
