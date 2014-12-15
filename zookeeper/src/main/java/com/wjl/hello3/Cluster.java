@@ -4,10 +4,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import org.apache.zookeeper.CreateMode;
-import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
-import org.apache.zookeeper.Watcher.Event.EventType;
 import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.ZooKeeper;
 
@@ -45,7 +43,7 @@ public class Cluster {
 					if (event.getState() == Event.KeeperState.SyncConnected) {
 						try {
 							System.out.println("当前节点：" + zk.getChildren(ROOT, true));
-						} catch (KeeperException | InterruptedException e) {
+						} catch (Exception e) {
 							e.printStackTrace();
 						}
 					}
